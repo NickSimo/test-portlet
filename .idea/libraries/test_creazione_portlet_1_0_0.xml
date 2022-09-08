@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="test-creazione-portlet-1.0.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/test-creazione-portlet-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

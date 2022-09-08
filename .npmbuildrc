@@ -1,0 +1,16 @@
+{
+	"liferayDir": "C:\\Users\\SIMONCELLIN\\liferay-ce-portal-7.4.3.31-ga31",
+	"webpack": {
+		"rules": [
+			{
+				"test": "src\\\\.*\\.ts$",
+				"use": "ts-loader"
+			}
+		],
+		"extensions": [
+			".ts",
+			".js"
+		],
+		"mainModule": "index.ts"
+	}
+}

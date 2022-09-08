@@ -1,0 +1,22 @@
+.tag {
+	font-weight: bold; margin-right: 1em;
+	background-color: #FBD603;
+}
+
+.value {
+	font-family: monospace;
+}
+
+.pre {
+	font-family: monospace; white-space: pre;
+}
+
+.nuovo {
+	font-family: monospace; white-space: pre;
+	background-color: #ABBAEA;
+}
+
+.div-1 {
+	font-family: "Times New Roman", Times, serif;
+	background-color: coral;
+}

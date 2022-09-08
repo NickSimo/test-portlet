@@ -1,0 +1,61 @@
+<div class="div-1"> TESTTTTTTTTTTTTTTTTTTTTTTTTTTT
+	<div>
+		<span class="tag">{{labels.portletNamespace}}:</span>
+		<span class="value">{{params.portletNamespace}}</span>
+	</div>
+	<div>
+		<span class="tag">{{labels.contextPath}}:</span>
+		<span class="value">{{params.contextPath}}</span>
+	</div>
+	<div>
+		<span class="tag">{{labels.portletElementId}}:</span>
+		<span class="value">{{params.portletElementId}}</span>
+	</div>
+	
+	<div>
+		<span class="tag">{{labels.configuration}}:</span>
+		<span class="value pre">{{configurationJSON}}</span>
+	</div>
+
+<!--	<div>-->
+<!--		<span class="nuovo">TEST16{{labels.nuovaLabel}}:</span>-->
+<!--		<span class="value pre">{{chiamataNuova}}</span>-->
+<!--	</div>-->
+
+
+	<h1 class="heading"><strong>HTTP </strong>Demo</h1>
+
+	<div class="form-group">
+		<button type="button" (click)="getClienti()">Get Clienti2</button>
+	</div>
+
+	<div *ngIf="loading">loading...</div>
+
+	<div *ngIf="errorMessage" class="alert alert-warning">
+		<strong>Warning!</strong> {{errorMessage | json}}
+	</div>
+
+	<table class='table'>
+		<thead>
+		<tr>
+			<th>ID</th>
+			<th>Nome</th>
+			<th>Cognome</th>
+			<th>Codice Fiscale</th>
+			<th>Indirizzo Residenza</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr *ngFor="let cliente of clienti;">
+			<td>{{cliente.id}}</td>
+			<td>{{cliente.nome}}</td>
+			<td>{{cliente.cognome}}</td>
+			<td>{{cliente.codice_fiscale}}</td>
+			<td>{{cliente.indirizzo_residenza}}</td>
+		</tr>
+		</tbody>
+	</table>
+
+	<pre>{{clienti | json}}</pre>
+
+</div>
