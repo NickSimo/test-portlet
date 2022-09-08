@@ -4,18 +4,18 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError} from 'rxjs/operators';
 
-import { clienti } from './clienti';
+import { monitoraggio } from './monitoraggio';
 
 @Injectable()
-export class ClientiService {
+export class MonitoraggioService {
 
-  baseURL: string = "http://localhost:8080/clienti/";
+  baseURL: string = "http://localhost:8080/";
 
   constructor(@Inject(HttpClient) private http: HttpClient) {
   }
 
-  getClienti(): Observable<any> {
-    return this.http.get(this.baseURL + 'elenco')
+  getMonitoraggio(tipo:string): Observable<any> {
+    return this.http.get(this.baseURL + 'monitoraggio?tipo=' + tipo)
   }
 
 }

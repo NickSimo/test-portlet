@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'
-import { ClientiService } from './clienti.service';
+import { MonitoraggioService } from './monitoraggio.service';
 
 import { AppComponent } from './app.component';
 
@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
 	declarations: [AppComponent],
 	entryComponents: [AppComponent],
 	bootstrap: [], // Don't bootstrap any component statically (see ngDoBootstrap() below)
-	providers: [ClientiService],
+	providers: [MonitoraggioService],
 })
 export class AppModule {
 	// Avoid bootstraping any component statically because we need to attach to

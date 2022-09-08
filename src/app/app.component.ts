@@ -1,9 +1,7 @@
 import { Component, Inject } from '@angular/core';
 
-import LiferayParams from '../types/LiferayParams'
-
-import { ClientiService } from './clienti.service';
-import { clienti } from './clienti';
+import { MonitoraggioService } from './monitoraggio.service';
+import { monitoraggio } from './monitoraggio';
 
 declare const Liferay: any;
 
@@ -14,40 +12,21 @@ declare const Liferay: any;
 		'/o/test-creazione-portlet/app/app.component.html'
 })
 export class AppComponent {
-	params: LiferayParams;
-	labels: any;
-	clienti: clienti[];
+	monitoraggio: monitoraggio[];
     loading: boolean = false;
     errorMessage: string;
 
-	constructor(@Inject(ClientiService) private clientiService:ClientiService) {
-		this.labels = {        
-			
-			configuration: 'Configurazione',
-			
-			portletNamespace: 'Portlet Namespace',
-        	contextPath: 'Context Path',
-			portletElementId: 'Portlet Element Id',
-			nuovaLabel: 'Nuova Label Aggiunta',
-		}
+	constructor(@Inject(MonitoraggioService) private monitoraggioService:MonitoraggioService) {
 	}
 
-	get configurationJSON() {
-		return JSON.stringify(this.params.configuration, null, 2);
-	}
-
-	get chiamataNuova() {
-	    return "prova";
-    }
-
-    public getClienti() {
+    public getMonitoraggio(tipo:string) {
         this.loading = true;
         this.errorMessage = "";
-        this.clientiService.getClienti()
+        this.monitoraggioService.getMonitoraggio(tipo)
           .subscribe(
             (response) => {                           //next() callback
               console.log('response received')
-              this.clienti = response;
+              this.monitoraggio = response;
             },
             (error) => {                              //error() callback
               console.error('Request failed with error')
@@ -58,6 +37,35 @@ export class AppComponent {
               console.log('Request completed')      //This is actually not needed
               this.loading = false;
             })
+      }
+
+      public openCity(cityName:string) {
+
+        const tabContents = document.getElementsByClassName(
+            'tabcontent',
+          ) as HTMLCollectionOf<HTMLElement>;
+        const tabsList = Array.from(tabContents);
+
+        const tabLinks = document.getElementsByClassName(
+                    'tablinks',
+                  ) as HTMLCollectionOf<HTMLElement>;
+        const tabLinksList = Array.from(tabLinks);
+
+        // Get all elements with class="tabcontent" and hide them
+        tabsList.forEach(tab => {
+          //do something
+          tab.style.display = "none";
+        });
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tabLinksList.forEach(tabLink => {
+                 //do something
+                 tabLink.className.replace(" active", "");
+        });
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = "block";
+//         evt.currentTarget.className += " active";
       }
 
 }

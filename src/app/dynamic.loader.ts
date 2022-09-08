@@ -31,7 +31,6 @@ export class DynamicLoader {
 				[],
 				node,
 			);
-			componentRef.instance.params = params;
 			this.injector.get(ApplicationRef).attachView(componentRef.hostView);
 		});
 	}
