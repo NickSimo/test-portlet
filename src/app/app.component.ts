@@ -13,33 +13,18 @@ declare const Liferay: any;
 })
 export class AppComponent {
 	monitoraggio: monitoraggio[];
+
     loading: boolean = false;
     errorMessage: string;
 
 	constructor(@Inject(MonitoraggioService) private monitoraggioService:MonitoraggioService) {
 	}
 
-    public getMonitoraggio(tipo:string) {
-        this.loading = true;
-        this.errorMessage = "";
-        this.monitoraggioService.getMonitoraggio(tipo)
-          .subscribe(
-            (response) => {                           //next() callback
-              console.log('response received')
-              this.monitoraggio = response;
-            },
-            (error) => {                              //error() callback
-              console.error('Request failed with error')
-              this.errorMessage = error;
-              this.loading = false;
-            },
-            () => {                                   //complete() callback
-              console.log('Request completed')      //This is actually not needed
-              this.loading = false;
-            })
-      }
+//     public getMonitoraggio(tipo:string) {
+//
+//       }
 
-      public openCity(cityName:string) {
+      public openCity(tipo:string) {
 
         const tabContents = document.getElementsByClassName(
             'tabcontent',
@@ -64,8 +49,26 @@ export class AppComponent {
         });
 
         // Show the current tab, and add an "active" class to the button that opened the tab
-        document.getElementById(cityName).style.display = "block";
+        document.getElementById(tipo).style.display = "block";
 //         evt.currentTarget.className += " active";
+
+        this.loading = true;
+        this.errorMessage = "";
+        this.monitoraggioService.getMonitoraggio(tipo)
+          .subscribe(
+            (response) => {                           //next() callback
+              console.log('response received')
+              this.monitoraggio = response;
+            },
+            (error) => {                              //error() callback
+              console.error('Request failed with error')
+              this.errorMessage = error;
+              this.loading = false;
+            },
+            () => {                                   //complete() callback
+              console.log('Request completed')      //This is actually not needed
+              this.loading = false;
+            })
       }
 
 }

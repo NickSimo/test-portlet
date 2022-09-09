@@ -37,3 +37,8 @@
   border: 1px solid #ccc;
   border-top: none;
 }
+
+.numero {
+  border: 1px solid #ccc;
+  background-color: #00FF00;
+}

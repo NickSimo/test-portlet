@@ -4,17 +4,14 @@
 
 
 	<div class="tab">
-		<button class="tablinks" (click)="openCity('risorsePiuScaricate')">Risorse piu scaricate</button>
-		<button class="tablinks" (click)="openCity('risorsePiuVisualizzate')">Risorse piu visualizzate</button>
-		<button class="tablinks" (click)="openCity('datasetPiuVisualizzati')">Dataset piu visualizzati</button>
-		<button class="tablinks" (click)="openCity('organizzazioniPiuVisualizzate')">Organizzazioni piu visualizzate</button>
-		<button class="tablinks" (click)="openCity('paginePiuVisualizzate')">pagine piu visualizzate</button>
+		<button class="tablinks" (click)="openCity('RESOURCE_DOWNLOAD')">Risorse piu scaricate</button>
+		<button class="tablinks" (click)="openCity('RESOURCE_VIEW')">Risorse piu visualizzate</button>
+		<button class="tablinks" (click)="openCity('DATASET_VIEW')">Dataset piu visualizzati</button>
+		<button class="tablinks" (click)="openCity('ORGANIZATION_VIEW')">Organizzazioni piu visualizzate</button>
+		<button class="tablinks" (click)="openCity('PAGE_VIEW')">Pagine piu visualizzate</button>
 	</div>
 
-	<div id="risorsePiuScaricate" class="tabcontent">
-		<div class="form-group">
-			<button type="button" (click)="getMonitoraggio('risorsePiuScaricate')">Popola dati</button>
-		</div>
+	<div id="RESOURCE_DOWNLOAD" class="tabcontent">
 
 		<div *ngIf="loading">loading...</div>
 
@@ -23,25 +20,16 @@
 		</div>
 
 		<table class="Table">
-			<thead>
-			<tr>
-				<th>Descrizione</th>
-				<th>Numero</th>
-			</tr>
-			</thead>
 			<tbody>
 			<tr *ngFor="let dato of monitoraggio;">
 				<td>{{dato.descrizione}}</td>
-				<td>{{dato.numero}}</td>
+				<td class="numero">{{dato.numero}}</td>
 			</tr>
 			</tbody>
 		</table>
 	</div>
 
-	<div id="risorsePiuVisualizzate" class="tabcontent">
-		<div class="form-group">
-			<button type="button" (click)="getMonitoraggio('risorsePiuVisualizzate')">Popola dati</button>
-		</div>
+	<div id="RESOURCE_VIEW" class="tabcontent">
 
 		<div *ngIf="loading">loading...</div>
 
@@ -50,25 +38,16 @@
 		</div>
 
 		<table class="Table">
-			<thead>
-			<tr>
-				<th>Descrizione</th>
-				<th>Numero</th>
-			</tr>
-			</thead>
 			<tbody>
 			<tr *ngFor="let dato of monitoraggio;">
 				<td>{{dato.descrizione}}</td>
-				<td>{{dato.numero}}</td>
+				<td class="numero">{{dato.numero}}</td>
 			</tr>
 			</tbody>
 		</table>
 	</div>
 
-	<div id="datasetPiuVisualizzati" class="tabcontent">
-		<div class="form-group">
-			<button type="button" (click)="getMonitoraggio('datasetPiuVisualizzati')">Popola dati</button>
-		</div>
+	<div id="DATASET_VIEW" class="tabcontent">
 
 		<div *ngIf="loading">loading...</div>
 
@@ -77,25 +56,16 @@
 		</div>
 
 		<table class="Table">
-			<thead>
-			<tr>
-				<th>Descrizione</th>
-				<th>Numero</th>
-			</tr>
-			</thead>
 			<tbody>
 			<tr *ngFor="let dato of monitoraggio;">
 				<td>{{dato.descrizione}}</td>
-				<td>{{dato.numero}}</td>
+				<td class="numero">{{dato.numero}}</td>
 			</tr>
 			</tbody>
 		</table>
 	</div>
 
-	<div id="organizzazioniPiuVisualizzate" class="tabcontent">
-		<div class="form-group">
-			<button type="button" (click)="getMonitoraggio('organizzazioniPiuVisualizzate')">Popola dati</button>
-		</div>
+	<div id="ORGANIZATION_VIEW" class="tabcontent">
 
 		<div *ngIf="loading">loading...</div>
 
@@ -104,25 +74,16 @@
 		</div>
 
 		<table class="Table">
-			<thead>
-			<tr>
-				<th>Descrizione</th>
-				<th>Numero</th>
-			</tr>
-			</thead>
 			<tbody>
 			<tr *ngFor="let dato of monitoraggio;">
 				<td>{{dato.descrizione}}</td>
-				<td>{{dato.numero}}</td>
+				<td class="numero">{{dato.numero}}</td>
 			</tr>
 			</tbody>
 		</table>
 	</div>
 
-	<div id="paginePiuVisualizzate" class="tabcontent">
-		<div class="form-group">
-			<button type="button" (click)="getMonitoraggio('paginePiuVisualizzate')">Popola dati</button>
-		</div>
+	<div id="PAGE_VIEW" class="tabcontent">
 
 		<div *ngIf="loading">loading...</div>
 
@@ -131,16 +92,10 @@
 		</div>
 
 		<table class="Table">
-			<thead>
-			<tr>
-				<th>Descrizione</th>
-				<th>Numero</th>
-			</tr>
-			</thead>
 			<tbody>
 			<tr *ngFor="let dato of monitoraggio;">
 				<td>{{dato.descrizione}}</td>
-				<td>{{dato.numero}}</td>
+				<td class="numero">{{dato.numero}}</td>
 			</tr>
 			</tbody>
 		</table>
