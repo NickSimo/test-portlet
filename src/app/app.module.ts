@@ -6,23 +6,12 @@ import { MonitoraggioService } from './monitoraggio.service';
 
 import { AppComponent } from './app.component';
 
-import { IgxLegendModule, IgxDataChartCoreModule, IgxDataChartCategoryCoreModule, IgxDataChartCategoryModule, IgxDataChartInteractivityModule, IgxDataChartVerticalCategoryModule, IgxDataChartAnnotationModule } from 'igniteui-angular-charts';
 
 @NgModule({
 	imports: [
 	    BrowserModule,
         HttpClientModule,
-        FormsModule,
-        BrowserAnimationsModule,
-        CommonModule,
-        FormsModule,
-        IgxLegendModule,
-        IgxDataChartCoreModule,
-        IgxDataChartCategoryCoreModule,
-        IgxDataChartCategoryModule,
-        IgxDataChartInteractivityModule,
-        IgxDataChartVerticalCategoryModule,
-        IgxDataChartAnnotationModule
+        FormsModule
     ],
 	declarations: [AppComponent],
 	entryComponents: [AppComponent],
