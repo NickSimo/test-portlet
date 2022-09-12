@@ -3,6 +3,9 @@ import { Component, Inject } from '@angular/core';
 import { MonitoraggioService } from './monitoraggio.service';
 import { monitoraggio } from './monitoraggio';
 
+import { ChartDataSets, ChartOptions } from 'chart.js';
+import { Color, Label } from 'ng2-charts';
+
 declare const Liferay: any;
 
 @Component({
@@ -12,13 +15,35 @@ declare const Liferay: any;
 		'/o/test-creazione-portlet/app/app.component.html'
 })
 export class AppComponent {
+    //chart
+    public lineChartData: ChartDataSets[] = [
+        { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
+    ];
+    public lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+   //public lineChartOptions: (ChartOptions & { annotation: any }) = {
+   //    responsive: true,
+   //};
+    public lineChartColors: Color[] = [
+        {
+            borderColor: 'black',
+            backgroundColor: 'rgba(255,0,0,0.3)',
+        },
+    ];
+    public lineChartLegend = true;
+    public lineChartType = 'horizontalBar';
+    public lineChartPlugins:any = [];
+     //chart
+
 	monitoraggio: monitoraggio[];
 
     loading: boolean = false;
     errorMessage: string;
 
 	constructor(@Inject(MonitoraggioService) private monitoraggioService:MonitoraggioService) {
-	}
+    }
+
+    ngOnInit() {
+    }
 
 //     public getMonitoraggio(tipo:string) {
 //

@@ -6,12 +6,15 @@ import { MonitoraggioService } from './monitoraggio.service';
 
 import { AppComponent } from './app.component';
 
+import { ChartsModule } from 'ng2-charts';
+
 
 @NgModule({
 	imports: [
 	    BrowserModule,
         HttpClientModule,
-        FormsModule
+		FormsModule,
+		ChartsModule
     ],
 	declarations: [AppComponent],
 	entryComponents: [AppComponent],
