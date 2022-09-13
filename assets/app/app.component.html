@@ -21,10 +21,10 @@
 
 		<table class="Table">
 			<tbody>
-			<tr *ngFor="let dato of monitoraggio;">
-				<td>{{dato.descrizione}}</td>
-				<td class="numero">{{dato.numero}}</td>
-			</tr>
+				<tr *ngFor="let dato of monitoraggio;">
+					<td>{{dato.descrizione}}</td>
+					<td class="numero">{{dato.numero}}</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
@@ -39,10 +39,10 @@
 
 		<table class="Table">
 			<tbody>
-			<tr *ngFor="let dato of monitoraggio;">
-				<td>{{dato.descrizione}}</td>
-				<td class="numero">{{dato.numero}}</td>
-			</tr>
+				<tr *ngFor="let dato of monitoraggio;">
+					<td>{{dato.descrizione}}</td>
+					<td class="numero">{{dato.numero}}</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
@@ -57,10 +57,10 @@
 
 		<table class="Table">
 			<tbody>
-			<tr *ngFor="let dato of monitoraggio;">
-				<td>{{dato.descrizione}}</td>
-				<td class="numero">{{dato.numero}}</td>
-			</tr>
+				<tr *ngFor="let dato of monitoraggio;">
+					<td>{{dato.descrizione}}</td>
+					<td class="numero">{{dato.numero}}</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
@@ -75,10 +75,10 @@
 
 		<table class="Table">
 			<tbody>
-			<tr *ngFor="let dato of monitoraggio;">
-				<td>{{dato.descrizione}}</td>
-				<td class="numero">{{dato.numero}}</td>
-			</tr>
+				<tr *ngFor="let dato of monitoraggio;">
+					<td>{{dato.descrizione}}</td>
+					<td class="numero">{{dato.numero}}</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
@@ -93,11 +93,22 @@
 
 		<table class="Table">
 			<tbody>
-			<tr *ngFor="let dato of monitoraggio;">
-				<td>{{dato.descrizione}}</td>
-				<td class="numero">{{dato.numero}}</td>
-			</tr>
+				<tr *ngFor="let dato of monitoraggio;">
+					<td>{{dato.descrizione}}</td>
+					<td class="numero">{{dato.numero}}</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
+</div>
+
+<div style="display: block;">
+	<canvas baseChart
+			[datasets]="barChartData"
+			[labels]="barChartLabels"
+			[options]="barChartOptions"
+			[plugins]="barChartPlugins"
+			[legend]="barChartLegend"
+			[chartType]="barChartType">
+	</canvas>
 </div>

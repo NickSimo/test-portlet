@@ -1,7 +1,10 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 
 import { MonitoraggioService } from './monitoraggio.service';
 import { monitoraggio } from './monitoraggio';
+
+import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
+import { Label } from 'ng2-charts';
 
 declare const Liferay: any;
 
@@ -11,11 +14,27 @@ declare const Liferay: any;
 		Liferay.ThemeDisplay.getPathContext() + 
 		'/o/test-creazione-portlet/app/app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 	monitoraggio: monitoraggio[];
-
     loading: boolean = false;
     errorMessage: string;
+
+    public barChartOptions: ChartOptions = {
+        responsive: true,
+        // We use these empty structures as placeholders for dynamic theming.
+        scales: { xAxes: [{}], yAxes: [{}] },
+        plugins: {
+            datalabels: {
+                anchor: 'end',
+                align: 'end',
+            }
+        }
+    };
+    public barChartLabels: Label[];
+    public barChartType: ChartType = 'bar';
+    public barChartLegend = true;
+    public barChartPlugins:any = [];
+    public barChartData: ChartDataSets[];
 
 	constructor(@Inject(MonitoraggioService) private monitoraggioService:MonitoraggioService) {
 	}
@@ -23,6 +42,25 @@ export class AppComponent {
 //     public getMonitoraggio(tipo:string) {
 //
 //       }
+
+    ngOnInit() {
+        let startDateArry: any[] = [];
+        let blinkArry: any[] = [];
+
+        for (var i = 0; i < 7; i++) {
+            blinkArry.push(Math.round(Math.random() * 100));
+            startDateArry.push(Math.round(Math.random() * 100));
+        }
+
+        this.barChartData = [{ data: blinkArry, label: 'blinks' }];
+
+        this.barChartLabels = [startDateArry];
+        console.log('this is the issue!', this.barChartLabels);
+
+        /* SOLUTION */
+        this.barChartLabels = startDateArry;
+        console.log('this is the fix!!!', this.barChartLabels);
+    }
 
       public openCity(tipo:string) {
 
