@@ -21,10 +21,10 @@
 
 		<table class="Table">
 			<tbody>
-			<tr *ngFor="let dato of monitoraggio;">
-				<td>{{dato.descrizione}}</td>
-				<td class="numero">{{dato.numero}}</td>
-			</tr>
+				<tr *ngFor="let dato of monitoraggio;">
+					<td>{{dato.descrizione}}</td>
+					<td class="numero">{{dato.numero}}</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
@@ -39,10 +39,10 @@
 
 		<table class="Table">
 			<tbody>
-			<tr *ngFor="let dato of monitoraggio;">
-				<td>{{dato.descrizione}}</td>
-				<td class="numero">{{dato.numero}}</td>
-			</tr>
+				<tr *ngFor="let dato of monitoraggio;">
+					<td>{{dato.descrizione}}</td>
+					<td class="numero">{{dato.numero}}</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
@@ -57,10 +57,10 @@
 
 		<table class="Table">
 			<tbody>
-			<tr *ngFor="let dato of monitoraggio;">
-				<td>{{dato.descrizione}}</td>
-				<td class="numero">{{dato.numero}}</td>
-			</tr>
+				<tr *ngFor="let dato of monitoraggio;">
+					<td>{{dato.descrizione}}</td>
+					<td class="numero">{{dato.numero}}</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
@@ -75,10 +75,10 @@
 
 		<table class="Table">
 			<tbody>
-			<tr *ngFor="let dato of monitoraggio;">
-				<td>{{dato.descrizione}}</td>
-				<td class="numero">{{dato.numero}}</td>
-			</tr>
+				<tr *ngFor="let dato of monitoraggio;">
+					<td>{{dato.descrizione}}</td>
+					<td class="numero">{{dato.numero}}</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
@@ -93,11 +93,23 @@
 
 		<table class="Table">
 			<tbody>
-			<tr *ngFor="let dato of monitoraggio;">
-				<td>{{dato.descrizione}}</td>
-				<td class="numero">{{dato.numero}}</td>
-			</tr>
+				<tr *ngFor="let dato of monitoraggio;">
+					<td>{{dato.descrizione}}</td>
+					<td class="numero">{{dato.numero}}</td>
+				</tr>
 			</tbody>
 		</table>
+	</div>
+</div>
+
+
+<div nz-row>
+	<div nz-col nzspan="12">
+		<h5> id=chart1 </h5>
+		<div id="chart1" echarts [options]="options" theme="macarons" class="demo-chart"></div>
+	</div>
+	<div nz-col nzspan="12">
+		<h5> id=chart2 </h5>
+		<div id="chart2" echarts [options]="options" theme="macarons" class="demo-chart"></div>
 	</div>
 </div>
