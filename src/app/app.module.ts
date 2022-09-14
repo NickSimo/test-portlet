@@ -4,18 +4,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'
 import { MonitoraggioService } from './monitoraggio.service';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxEchartsModule } from 'ngx-echarts';
 import { AppComponent } from './app.component';
-
+import { GoogleChartsModule } from 'angular-google-charts';
 
 @NgModule({
 	imports: [
 	    BrowserModule,
         HttpClientModule,
 		FormsModule,
-		BrowserAnimationsModule,
-		NgxEchartsModule
+		GoogleChartsModule
     ],
 	declarations: [AppComponent],
 	entryComponents: [AppComponent],

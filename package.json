@@ -40,6 +40,7 @@
 		"@angular/platform-browser-dynamic": "10.2.2",
 		"@angular/router": "10.2.2",
 		"@types/echarts": "^4.9.16",
+		"angular-google-charts": "^1.1.6",
 		"echarts": "^4.1.0",
 		"ng2-charts": "^2.4.1",
 		"ngx-echarts": "^4.1.0",

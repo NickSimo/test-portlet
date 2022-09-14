@@ -102,14 +102,11 @@
 	</div>
 </div>
 
+<google-chart [type]="type1" [data]="data221" [columns]="columnNames221" [options]="options"
+			  (select)="onSelect($event)"></google-chart>
 
-<div nz-row>
-	<div nz-col nzspan="12">
-		<h5> id=chart1 </h5>
-		<div id="chart1" echarts [options]="options" theme="macarons" class="demo-chart"></div>
-	</div>
-	<div nz-col nzspan="12">
-		<h5> id=chart2 </h5>
-		<div id="chart2" echarts [options]="options" theme="macarons" class="demo-chart"></div>
-	</div>
-</div>
+<google-chart [type]="type1" [data]="data1" [columns]="columnNames1" [options]="options"
+			  (select)="onSelect($event)"></google-chart>
+
+<google-chart [type]="type1" [data]="data21" [columns]="columnNames21" [options]="options3"
+			  (select)="onSelect($event)"></google-chart>
