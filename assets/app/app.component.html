@@ -105,8 +105,18 @@
 <google-chart [type]="type1" [data]="data221" [columns]="columnNames221" [options]="options"
 			  (select)="onSelect($event)"></google-chart>
 
-<google-chart [type]="type1" [data]="data1" [columns]="columnNames1" [options]="options"
-			  (select)="onSelect($event)"></google-chart>
+<!--<google-chart [type]="type1" [data]="data1" [columns]="columnNames1" [options]="options"-->
+<!--			  (select)="onSelect($event)"></google-chart>-->
 
-<google-chart [type]="type1" [data]="data21" [columns]="columnNames21" [options]="options3"
-			  (select)="onSelect($event)"></google-chart>
+<!--<google-chart [type]="type1" [data]="data21" [columns]="columnNames21" [options]="options3"-->
+<!--			  (select)="onSelect($event)"></google-chart>-->
+<div>
+<table class="Table">
+	<tbody>
+		
+		<tr *ngFor="let dato of descrizioni;">
+			<td>Dato : {{dato}}</td>
+		</tr>
+	</tbody>
+</table>
+</div>

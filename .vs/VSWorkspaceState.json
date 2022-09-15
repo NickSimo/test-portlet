@@ -3,8 +3,11 @@
     "",
     "\\assets",
     "\\assets\\app",
-    "\\assets\\css"
+    "\\assets\\css",
+    "\\dist",
+    "\\src",
+    "\\src\\app"
   ],
-  "SelectedNode": "\\assets\\css\\styles.css",
+  "SelectedNode": "\\src\\app\\app.component.ts",
   "PreviewInSolutionExplorer": false
 }
