@@ -4,6 +4,7 @@
     "\\assets",
     "\\assets\\app",
     "\\assets\\css",
+    "\\build",
     "\\dist",
     "\\src",
     "\\src\\app"

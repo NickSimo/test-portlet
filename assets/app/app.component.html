@@ -11,7 +11,7 @@
 		<button class="tablinks" (click)="openCity('PAGE_VIEW')">Pagine piu visualizzate</button>
 	</div>
 
-	<div id="RESOURCE_DOWNLOAD" class="tabcontent">
+	<div id="RESOURCE_DOWNLOAD" class="tabcontent" #tabcontent>
 
 		<div *ngIf="loading">loading...</div>
 
@@ -19,14 +19,14 @@
 			<strong>Warning!</strong> {{errorMessage | json}}
 		</div>
 
-		<table class="Table">
-			<tbody>
-				<tr *ngFor="let dato of monitoraggio;">
-					<td>{{dato.descrizione}}</td>
-					<td class="numero">{{dato.numero}}</td>
-				</tr>
-			</tbody>
-		</table>
+		<input type="button" value="TORTA" (click)="type = 'torta'" />
+		<input type="button" value="BAR CHART" (click)="type = 'barChart'" />
+
+		<google-chart *ngIf="type == 'barChart'" [title]="RESOURCE_DOWNLOAD_TITLE" [height]="barHeight" [type]="barChartType" [data]="data221" [columns]="columnNames221" [options]="barOptions"
+					  (select)="onSelect($event)"></google-chart>
+
+		<google-chart *ngIf="type == 'torta'" [title]="RESOURCE_DOWNLOAD_TITLE" [height]="pieHeight" [width]="pieWidth" [type]="pieType" [data]="data221" [columns]="columnNames221" [options]="pieOptions"
+					  (select)="onSelect($event)"></google-chart>
 	</div>
 
 	<div id="RESOURCE_VIEW" class="tabcontent">
@@ -37,14 +37,14 @@
 			<strong>Warning!</strong> {{errorMessage | json}}
 		</div>
 
-		<table class="Table">
-			<tbody>
-				<tr *ngFor="let dato of monitoraggio;">
-					<td>{{dato.descrizione}}</td>
-					<td class="numero">{{dato.numero}}</td>
-				</tr>
-			</tbody>
-		</table>
+		<input type="button" value="TORTA" (click)="type = 'torta'" />
+		<input type="button" value="BAR CHART" (click)="type = 'barChart'" />
+
+		<google-chart *ngIf="type == 'barChart'" [title]="RESOURCE_DOWNLOAD_TITLE" [height]="barHeight" [type]="barChartType" [data]="data221" [columns]="columnNames221" [options]="barOptions"
+					  (select)="onSelect($event)"></google-chart>
+
+		<google-chart *ngIf="type == 'torta'" [title]="RESOURCE_DOWNLOAD_TITLE" [height]="pieHeight" [width]="pieWidth" [type]="pieType" [data]="data221" [columns]="columnNames221" [options]="pieOptions"
+					  (select)="onSelect($event)"></google-chart>
 	</div>
 
 	<div id="DATASET_VIEW" class="tabcontent">
@@ -55,14 +55,14 @@
 			<strong>Warning!</strong> {{errorMessage | json}}
 		</div>
 
-		<table class="Table">
-			<tbody>
-				<tr *ngFor="let dato of monitoraggio;">
-					<td>{{dato.descrizione}}</td>
-					<td class="numero">{{dato.numero}}</td>
-				</tr>
-			</tbody>
-		</table>
+		<input type="button" value="TORTA" (click)="type = 'torta'" />
+		<input type="button" value="BAR CHART" (click)="type = 'barChart'" />
+
+		<google-chart *ngIf="type == 'barChart'" [title]="RESOURCE_DOWNLOAD_TITLE" [height]="barHeight" [type]="barChartType" [data]="data221" [columns]="columnNames221" [options]="barOptions"
+					  (select)="onSelect($event)"></google-chart>
+
+		<google-chart *ngIf="type == 'torta'" [title]="RESOURCE_DOWNLOAD_TITLE" [height]="pieHeight" [width]="pieWidth" [type]="pieType" [data]="data221" [columns]="columnNames221" [options]="pieOptions"
+					  (select)="onSelect($event)"></google-chart>
 	</div>
 
 	<div id="ORGANIZATION_VIEW" class="tabcontent">
@@ -73,14 +73,14 @@
 			<strong>Warning!</strong> {{errorMessage | json}}
 		</div>
 
-		<table class="Table">
-			<tbody>
-				<tr *ngFor="let dato of monitoraggio;">
-					<td>{{dato.descrizione}}</td>
-					<td class="numero">{{dato.numero}}</td>
-				</tr>
-			</tbody>
-		</table>
+		<input type="button" value="TORTA" (click)="type = 'torta'" />
+		<input type="button" value="BAR CHART" (click)="type = 'barChart'" />
+
+		<google-chart *ngIf="type == 'barChart'" [title]="RESOURCE_DOWNLOAD_TITLE" [height]="barHeight" [type]="barChartType" [data]="data221" [columns]="columnNames221" [options]="barOptions"
+					  (select)="onSelect($event)"></google-chart>
+
+		<google-chart *ngIf="type == 'torta'" [title]="RESOURCE_DOWNLOAD_TITLE" [height]="pieHeight" [width]="pieWidth" [type]="pieType" [data]="data221" [columns]="columnNames221" [options]="pieOptions"
+					  (select)="onSelect($event)"></google-chart>
 	</div>
 
 	<div id="PAGE_VIEW" class="tabcontent">
@@ -91,32 +91,14 @@
 			<strong>Warning!</strong> {{errorMessage | json}}
 		</div>
 
-		<table class="Table">
-			<tbody>
-				<tr *ngFor="let dato of monitoraggio;">
-					<td>{{dato.descrizione}}</td>
-					<td class="numero">{{dato.numero}}</td>
-				</tr>
-			</tbody>
-		</table>
+		<input type="button" value="TORTA" (click)="type = 'torta'" />
+		<input type="button" value="BAR CHART" (click)="type = 'barChart'" />
+
+		<google-chart *ngIf="type == 'barChart'" [title]="RESOURCE_DOWNLOAD_TITLE" [height]="barHeight" [type]="barChartType" [data]="data221" [columns]="columnNames221" [options]="barOptions"
+					  (select)="onSelect($event)"></google-chart>
+
+		<google-chart *ngIf="type == 'torta'" [title]="RESOURCE_DOWNLOAD_TITLE" [height]="pieHeight" [width]="pieWidth" [type]="pieType" [data]="data221" [columns]="columnNames221" [options]="pieOptions"
+					  (select)="onSelect($event)"></google-chart>
 	</div>
 </div>
 
-<google-chart [type]="type1" [data]="data221" [columns]="columnNames221" [options]="options"
-			  (select)="onSelect($event)"></google-chart>
-
-<!--<google-chart [type]="type1" [data]="data1" [columns]="columnNames1" [options]="options"-->
-<!--			  (select)="onSelect($event)"></google-chart>-->
-
-<!--<google-chart [type]="type1" [data]="data21" [columns]="columnNames21" [options]="options3"-->
-<!--			  (select)="onSelect($event)"></google-chart>-->
-<div>
-<table class="Table">
-	<tbody>
-		
-		<tr *ngFor="let dato of descrizioni;">
-			<td>Dato : {{dato}}</td>
-		</tr>
-	</tbody>
-</table>
-</div>
